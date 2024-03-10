@@ -1,0 +1,93 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+command_timeout = 1000
+format = """
+$os$username@$hostname $directory $fill ($python)($cmake) ($git_status $git_branch)
+$character"""
+# right_format = """""" # Not available on powershell
+
+[os]
+format = '[$symbol](bold white) '
+disabled = false
+
+[os.symbols]
+Windows = ''
+Arch = '󰣇'
+Ubuntu = ''
+Debian = ''
+Fedora = ''
+Macos = '󰀵'
+
+
+# Shows the username
+[username]
+style_user = 'white bold'
+style_root = 'red bold'
+format = '[$user]($style)'
+disabled = false
+show_always = true
+
+# Shows the hostname
+[hostname]
+ssh_only = false
+format = '[$hostname](bold yellow)'
+disabled = false
+
+
+# Replace the '❯' symbol in the prompt with '➜'
+[character]
+#success_symbol = '[➜](bold green)'
+success_symbol = '[󱞩](bold green)'
+
+[fill]
+symbol = ' '
+#style = 'bold green'
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+# Shows current directory
+[directory]
+truncation_length = 3
+truncation_symbol = '…/'
+home_symbol = '󰋜 ~'
+read_only_style = '197'
+read_only = '  '
+format = 'at  [$path]($style)[$read_only]($read_only_style)'
+
+[python]
+format = "[${symbol}${version} ($virtualenv)]($style)"
+# format = "running [${symbol}${pyenv_prefix}(${version})($virtualenv)]($style)"
+python_binary = ['./venv/bin/python', 'python', 'python3']
+symbol = " "
+disabled = false
+
+[cmake]
+disabled = false
+
+
+[git_branch]
+symbol = ' '
+format = '[$symbol$branch]($style)'
+# truncation_length = 4
+truncation_symbol = '…/'
+style = 'bold green'
+
+[git_status]
+format = '[$all_status$ahead_behind]($style)'
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
