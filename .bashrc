@@ -15,6 +15,9 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
+
 eval "$(starship init bash)"
 
 # User specific aliases and functions
