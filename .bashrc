@@ -16,13 +16,13 @@ export PATH
 # export SYSTEMD_PAGER=
 
 # Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+source /usr/share/fzf/shell/key-bindings.bash
 
 eval "$(starship init bash)"
 
 # User specific aliases and functions
-alias vim='nvim -v'
-export EDITOR="nvim -v"
+alias vim='nvim'
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
 
