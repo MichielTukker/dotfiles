@@ -15,11 +15,14 @@ export PATH
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
+# Set up fzf key bindings and fuzzy completion
+source /usr/share/fzf/shell/key-bindings.bash
+
 eval "$(starship init bash)"
 
 # User specific aliases and functions
-alias vim='nvim -v'
-export EDITOR="nvim -v"
+alias vim='nvim'
+export EDITOR="nvim"
 export VISUAL="$EDITOR"
 
 

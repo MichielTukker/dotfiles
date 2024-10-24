@@ -4,37 +4,54 @@ live_config_reload = true
 style = "Beam"
 
 [font]
-size = 16.0
+size = 12.0
 
 [font.normal]
-family = "Noto Sans Mono" 
+family = "NotoMono Nerd font" 
 
 [window]
 startup_mode = "Windowed"
 dynamic_padding = true
 opacity = 1.0
+size = 12.0
 
 [window.padding]
 x = 6
 y = 0
 
-#[window.dimensions]
-#columns = 90
-#lines = 25
+[window.dimensions]
+columns = 150
+lines = 40
 
-[colors.normal]
-black = "#21222c"
-red = "#ff5555"
-green = "#50fa7b"
-yellow = "#f1fa8c"
-blue = "#bd93f9"
-magenta = "#ff79c6"
-cyan = "#8be9fd"
-white = "#f8f8f2"
 
+# Colors (Ayu Dark)
+
+# Default colors
 [colors.primary]
-background = "#282a36"
-foreground = "#f8f8f2"
+background = '#0A0E14'
+foreground = '#B3B1AD'
+
+# Normal colors
+[colors.normal]
+black   = '#01060E'
+red     = '#EA6C73'
+green   = '#91B362'
+yellow  = '#F9AF4F'
+blue    = '#53BDFA'
+magenta = '#FAE994'
+cyan    = '#90E1C6'
+white   = '#C7C7C7'
+
+# Bright colors
+[colors.bright]
+black   = '#686868'
+red     = '#F07178'
+green   = '#C2D94C'
+yellow  = '#FFB454'
+blue    = '#59C2FF'
+magenta = '#FFEE99'
+cyan    = '#95E6CB'
+white   = '#FFFFFF'
 
 [colors.cursor]
 text = "CellBackground"
