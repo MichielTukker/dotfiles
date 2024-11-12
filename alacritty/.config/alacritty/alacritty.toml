@@ -7,11 +7,13 @@ style = "Beam"
 size = 12.0
 
 [font.normal]
-family = "NotoMono Nerd Font" 
+family = "NotoMono Nerd font" 
+
 [window]
 startup_mode = "Windowed"
 dynamic_padding = true
-opacity = 0.85
+opacity = 1.0
+size = 12.0
 
 [window.padding]
 x = 6
@@ -54,6 +56,4 @@ white   = '#FFFFFF'
 [colors.cursor]
 text = "CellBackground"
 cursor = "CellForeground"
-
-
 
