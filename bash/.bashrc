@@ -28,8 +28,10 @@ export VISUAL="$EDITOR"
 
 source /home/michiel/vcpkg/scripts/vcpkg_completion.bash
 . "$HOME/.cargo/env"
-source /home/michiel/src/alacritty/extra/completions/alacritty.bash
 
-alias ll='ls -lah --color --group-directories-first'
-alias la='ls -ah -- color --group-directories-first'
+# Alacritty not used currently
+# source /home/michiel/src/alacritty/extra/completions/alacritty.bash
 
+alias ll='ls -latrh --color --group-directories-first'
+alias la='ls -ah --color --group-directories-first'
+alias lt='ls -latrh --color --group-directories-first'
