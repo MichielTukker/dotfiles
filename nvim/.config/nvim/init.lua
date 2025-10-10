@@ -189,12 +189,28 @@ require('lazy').setup({
   },
 
   {
+    -- You can easily change to a different colorscheme.
+		-- Change the name of the colorscheme plugin below, and then
+		-- change the command in the config to whatever the name of that colorscheme is.
+		--
+		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+		"folke/tokyonight.nvim",
+		priority = 1000, -- Make sure to load this before all the other start plugins.
+		init = function()
+			-- Load the colorscheme here.
+			-- Like many other themes, this one has different styles, and you could load
+			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+			vim.cmd.colorscheme("tokyonight-night")
+			-- You can configure highlights by doing something like:
+			vim.cmd.hi("Comment gui=none")
+		end,
+
     -- Theme inspired by Atom
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    -- 'navarasu/onedark.nvim',
+    -- priority = 1000,
+    -- config = function()
+      -- vim.cmd.colorscheme 'onedark'
+    --end,
   },
 
   {
@@ -422,7 +438,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'asm', 'bash', 'c', 'cmake', 'cpp', 'csv', 'diff', 'dockerfile', 'foam', 'fortran', 'html', 'json', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'rust', 'vimdoc', 'vim', },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -562,10 +578,10 @@ require('mason-lspconfig').setup()
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-  -- clangd = {},
+  clangd = {},
   -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
+  pyright = {},
+  rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
