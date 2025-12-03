@@ -206,6 +206,6 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id killall polybar
 exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh 
 
-exec_always feh --bg-fill ~/.config/i3/wallpapers/left.jpg ~/.config/i3/wallpapers/right.png
+exec_always feh --bg-fill ~/.config/i3/wallpaper/left.jpg ~/.config/i3/wallpaper/right.jpg
 
 
